@@ -15,7 +15,7 @@ class IndexController extends Controller
         $data = $request->validated();
         if(isset($data['content'])) {
             $news = News::where('content','like', "%{$data['content']}%")->get();
-            
+
         } else {
             $news = News::paginate(6);
         }
